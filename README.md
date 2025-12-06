@@ -1,185 +1,172 @@
-🎓 Student Management System (SMS) – SQL Server Project
+# 🎓 Student Management System (SMS) – SQL Server Project
 
-This is my first complete SQL project, built to understand real-world database design and SQL Server development.
-The project is fully implemented using a single SQL script (SMS.sql), which creates:
+This is my **first complete SQL project**, built to understand real-world database design and SQL Server development.  
+The entire solution is implemented using **a single SQL script (`StudentManagementDB_Full.sql`)**, which creates:
 
-Database & schema
+- Database & schema  
+- Tables with PK/FK constraints  
+- Stored Procedures  
+- Views  
+- Scalar Functions  
+- Trigger-based audit logging  
+- 300 sample students + enrollments + attendance  
+- ER Diagram & output screenshots  
 
-All tables with constraints
+This project is designed so **anyone can run it instantly in SSMS** and explore a complete relational system.
 
-Stored Procedures
+---
 
-Views
+## 🚀 Features Included
 
-Scalar Functions
+### 🗂️ 1. Database Schema (`acad`)
 
-Trigger-based audit logging
+The script creates these tables:
 
-300 sample student records + enrollments + attendance
-
-ER Diagram & output screenshots
-
-This project is designed so anyone can run it instantly in SSMS and explore a complete relational system.
-
-🚀 Features Included
-🗃️ 1. Database Schema (acad schema)
-
-The script creates a full academic system with the following tables:
-
-Departments
-
-Courses
-
-Students
-
-Enrollments
-
-Attendance
-
-Instructors
-
-ChangeLog (for auditing)
+- Departments  
+- Courses  
+- Students  
+- Enrollments  
+- Attendance  
+- Instructors  
+- ChangeLog (audit table)
 
 All tables include:
 
-Primary Keys
+- Primary Keys  
+- Foreign Keys  
+- Constraints  
+- Indexes  
+- Defaults  
 
-Foreign Keys
+---
 
-Constraints
+## ⚙️ 2. Stored Procedures
 
-Indexes
+| Procedure         | Description                                  |
+|------------------|----------------------------------------------|
+| `spAddStudent`   | Inserts a new student and logs the action    |
+| `spEnrollStudent`| Enrolls a student with validation            |
+| `spUpdateStudent`| Updates student details safely               |
 
-Defaults
+---
 
-Proper relationships (PK–FK)
+## 👁️ 3. View
 
-⚙️ 2. Stored Procedures
+| View Name                | Description |
+|-------------------------|-------------|
+| `vwStudentEnrollments`  | Combines student, course, and department data for reporting |
 
-Reusable business logic for consistent operations:
+This simplifies analytics and eliminates repetitive JOINs.
 
-Procedure	Purpose
-spAddStudent	Inserts a new student & logs the action
-spEnrollStudent	Enrolls a student with validation
-spUpdateStudent	Updates student details safely
-👁️ 3. View
-View Name	Description
-vwStudentEnrollments	Combines student, course, and department details for reporting
+---
 
-This simplifies analytics and avoids repetitive JOINs.
+## 🧮 4. Scalar Function
 
-🧮 4. Scalar Function
-Function	Purpose
-fnCalculateAge	Calculates age from date of birth (accurately handles month/day)
+| Function          | Purpose |
+|-------------------|---------|
+| `fnCalculateAge`  | Calculates age from DOB with year/month precision |
 
-Used in reports and dashboards.
+---
 
-🔥 5. Trigger
-Trigger	Purpose
-trg_Students_Audit	Automatically logs INSERT / UPDATE actions to the ChangeLog table
+## 🔥 5. Trigger
 
-This shows how enterprise auditing works.
+| Trigger Name            | Purpose |
+|-------------------------|---------|
+| `trg_Students_Audit`    | Logs INSERT/UPDATE operations to `ChangeLog` |
 
-📊 6. Sample Data Generation
+This demonstrates enterprise-style auditing.
 
-The script auto-generates:
+---
 
-300 students
+## 📊 6. Sample Data Generation
 
-Random enrollments (1–2 per student)
+The script automatically generates:
 
-200 attendance rows
+- 300 student records  
+- Random enrollments per student  
+- 200 attendance entries  
+- Complete audit logs  
 
-Full audit logs
+This makes the database immediately ready for demos and learning.
 
-This makes the database immediately usable for demos and practice.
+---
 
-🛠️ How to Run This Project
-✔ Step 1: Open SSMS
-✔ Step 2: Open the file
+## 🛠️ How to Run
 
-StudentManagementDB_Full.sql
-
-✔ Step 3: Run the entire script (F5)
+1. Open **SQL Server Management Studio (SSMS)**  
+2. Open `StudentManagementDB_Full.sql`  
+3. Run the script (**F5**)  
 
 The script will:
 
-Drop the database if it exists
+- Drop database if it already exists  
+- Recreate a fresh schema  
+- Build tables, procedures, functions, triggers  
+- Insert sample data  
+- Show test queries  
 
-Create a fresh one
+---
 
-Build schema, tables, views, procedures, triggers
-
-Insert sample data
-
-Show example queries
-
-You now have a fully working Student Management System database.
-
-🧩 ER Diagram
-
-Visual representation of relationships:
+## 🧩 ER Diagram
 
 ![ER Diagram](Outputs/SMS ER diagram.png)
 
-🧪 Sample Queries & Screenshots
-🎯 Students Output
+---
 
+## 🧪 Screenshots & Outputs
+
+### 🎯 Students Table
 ![Students](Outputs/SMS Students.png)
 
-⚙️ Stored Procedure Execution
-
+### ⚙️ Stored Procedure Execution
 ![SP](Outputs/SMS SP.png)
 
-👁️ View Results
-
+### 👁️ View Results
 ![View](Outputs/SMS view.png)
 
-🔥 Trigger Logging
-
+### 🔥 Trigger Logging
 ![Trigger](Outputs/SMS Trigger.png)
 
-🧮 Function Usage
-
+### 🧮 Function Usage
 ![Function](Outputs/SMS Function.png)
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+
 StudentManagementSystem-SQL/
 │
-├── StudentManagementDB_Full.sql   # Full database installer script
-├── README.md                      # Project documentation
-└── Outputs/                        # Images & ERD for documentation
-      ├── SMS ER diagram.png
-      ├── SMS Students.png
-      ├── SMS SP.png
-      ├── SMS view.png
-      ├── SMS Trigger.png
-      └── SMS Function.png
+├── StudentManagementDB_Full.sql # Full database installer script
+├── README.md # Documentation
+└── Outputs/ # Screenshots & ER Diagram
+├── SMS ER diagram.png
+├── SMS Students.png
+├── SMS SP.png
+├── SMS view.png
+├── SMS Trigger.png
+└── SMS Function.png
 
-🎓 What I Learned
+---
 
-Designing normalized relational databases
+## 🎓 What I Learned
 
-Implementing PK/FK constraints
+- Database normalization & schema design  
+- Implementing PK/FK relationships  
+- Writing Stored Procedures  
+- Creating Views for reporting  
+- Building Functions for calculations  
+- Trigger-based auditing  
+- Sample data automation  
+- GitHub documentation & project structuring  
 
-Writing Stored Procedures
+---
 
-Designing Views for analytics
+## ⭐ Support
 
-Building custom Functions
+If you like this project, please ⭐ star the repository!  
+Your feedback is always welcome.
 
-Implementing Triggers for auditing
+---
 
-Automating sample data generation
-
-Writing professional SQL documentation
-
-Creating GitHub-ready projects
-
-⭐ If you like this project
-
-Please ⭐ Star the repository and feel free to share feedback!
-
-🤝 Connect With Me
-
-If you'd like to collaborate or discuss SQL/data projects—I'm always open to learning more.
+## 🤝 Connect With Me
+I'm open to learning, collaboration, and improving my SQL development skills.
