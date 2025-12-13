@@ -116,31 +116,6 @@ After execution, you'll have a fully functional Student Management System databa
 
 ---
 
-## 🧩 ER Diagram
-
-![ER Diagram](Outputs/SMS ER diagram.png)
-
----
-
-## 🧪 Sample Queries & Screenshots
-
-### 🎯 Students Table
-![Students](Outputs/SMS Students.png)
-
-### ⚙️ Stored Procedure Execution
-![SP](Outputs/SMS SP.png)
-
-### 👁️ View Results
-![View](Outputs/SMS view.png)
-
-### 🔥 Trigger Logging
-![Trigger](Outputs/SMS Trigger.png)
-
-### 🧮 Function Usage
-![Function](Outputs/SMS Function.png)
-
----
-
 ## 📂 Project Structure
 
 ```
